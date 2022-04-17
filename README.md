@@ -9,17 +9,9 @@
 
 ▶ We can generate various forms of desired numbers by inputting condition(label info) & various 2 dimensinal points into the decoder part of our model.
 
-
-
-Try this markdown:
-
-![alt text](https://github.com/boranim/cVAE-practice-with-MNIST/blob/main/cVAE_images/cVAE%20sheme_Ebra.JPG)
-<img src="https://github.com/boranim/cVAE-practice-with-MNIST/blob/main/cVAE_images/cVAE%20sheme_Ebra.JPG" width="400" height="200" />
-
-
+<img src="https://github.com/boranim/cVAE-practice-with-MNIST/blob/main/cVAE_images/cVAE%20sheme_Ebra.JPG" width="600" height="300" />
 
 Let's first start by importing libraries;
-
 
 ### Import Libraries
 * In this practice I used the library versions below, if your version cause a problem you can run the code below.
@@ -121,7 +113,7 @@ check_data(10)
 
 
 
-![png](Convolutional_cVAE_excersize_with_MNIST_files/Convolutional_cVAE_excersize_with_MNIST_10_1.png)
+![png](https://github.com/boranim/cVAE-practice-with-MNIST/blob/main/cVAE_images/2.png)
 
 
     Label of the 10 th data is: 3
