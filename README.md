@@ -14,7 +14,7 @@
 Try this markdown:
 
 ![alt text](https://github.com/boranim/cVAE-practice-with-MNIST/blob/main/cVAE_images/cVAE%20sheme_Ebra.JPG)
-
+<img src="https://github.com/boranim/cVAE-practice-with-MNIST/blob/main/cVAE_images/cVAE%20sheme_Ebra.JPG" width="400" height="200" />
 
 
 
