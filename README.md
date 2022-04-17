@@ -257,7 +257,7 @@ Image('cVAE_model_plot.png', embed=True, retina=True)
 
 
 
-![png](Convolutional_cVAE_excersize_with_MNIST_files/Convolutional_cVAE_excersize_with_MNIST_24_0.png)
+![png](https://github.com/boranim/cVAE-practice-with-MNIST/blob/main/cVAE_images/3.png)
 
 
 
@@ -268,26 +268,11 @@ plot_model(encoder, to_file='cVAE_encoder_model_plot.png', show_shapes=True, sho
 Image('cVAE_encoder_model_plot.png', embed=True, retina=True)
 ```
 
-
-
-
-![png](Convolutional_cVAE_excersize_with_MNIST_files/Convolutional_cVAE_excersize_with_MNIST_25_0.png)
-
-
-
-
 ```python
 # Plot decoder achitecture
 plot_model(decoder, to_file='cVAE_decoder_model_plot.png', show_shapes=True, show_layer_names=True)
 Image('cVAE_decoder_model_plot.png', embed=True, retina=True)
 ```
-
-
-
-
-![png](Convolutional_cVAE_excersize_with_MNIST_files/Convolutional_cVAE_excersize_with_MNIST_26_0.png)
-
-
 
 ### Train the model
 * Now, we will train our model with the variables we declared at the top.
@@ -349,7 +334,7 @@ def construct_latent_plot():
     z_train = encoder.predict([X_test], batch_size=m)
     pred_z = z_train[2]
     pred_z= np.asarray(pred_z)
-    print(pred_z.shape)
+    print(pred_z.shape) #10,000 2-dimentional points
 
     pred_z= pred_z.reshape(X_test.shape[0], n_z)
     plt.figure(figsize=(7, 6))
@@ -365,7 +350,7 @@ construct_latent_plot()
 
 
 
-![png](Convolutional_cVAE_excersize_with_MNIST_files/Convolutional_cVAE_excersize_with_MNIST_31_1.png)
+![png](https://github.com/boranim/cVAE-practice-with-MNIST/blob/main/cVAE_images/4.png)
 
 
 #### Comparing the output with the input data
@@ -403,7 +388,7 @@ compare_predicts(10)
 ```
 
 
-![png](Convolutional_cVAE_excersize_with_MNIST_files/Convolutional_cVAE_excersize_with_MNIST_33_0.png)
+![png](https://github.com/boranim/cVAE-practice-with-MNIST/blob/main/cVAE_images/5.png)
 
 
 #### Construct new images
@@ -434,5 +419,5 @@ construct_image()
 ```
 
 
-![png](Convolutional_cVAE_excersize_with_MNIST_files/Convolutional_cVAE_excersize_with_MNIST_35_0.png)
+![png](https://github.com/boranim/cVAE-practice-with-MNIST/blob/main/cVAE_images/6.png)
 
