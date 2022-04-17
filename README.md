@@ -1,4 +1,4 @@
-# Key points
+# Key points of contitional cVAE
 
 
 *   cVAE means conditional variational Auto encoder
@@ -13,7 +13,7 @@
 
 Let's first start by importing libraries;
 
-### Import Libraries
+## Import Libraries
 * In this practice I used the library versions below, if your version cause a problem you can run the code below.
 
 
@@ -61,7 +61,7 @@ from keras import backend as K
 warnings.filterwarnings('ignore')
 ```
 
-### Load the MNIST dataset
+## Load the MNIST dataset
 
 
 ```python
@@ -93,7 +93,7 @@ y_test = to_categorical(Y_test)
     Data size is: 28 x 28
 
 
-#### Check the data in the dataset
+### Check the data in the dataset
 You can check different datas by changing the number in the brackets in the bottom line.*italik metin*
 
 
@@ -120,7 +120,7 @@ check_data(10)
     One-hot coded label of the 10 th data is: [0. 0. 0. 1. 0. 0. 0. 0. 0. 0.]
 
 
-### Declare the training variables
+## Declare the training variables
 
 
 ```python
@@ -147,7 +147,7 @@ def sample_z(args):
 ```
 
 
-### Model architecture
+## Model architecture
 *   Now, we can build the encoder part of our model.
 * We will use convolutional layers for out network.
 
@@ -200,7 +200,7 @@ dec_input = Concatenate(axis=1)([z_in, cond_in])
 dec_out = decoding(dec_input)
 ```
 
-### Loss functions
+## Loss functions
 The loss function consists of two parts, reconstruction loss and KL divergence loss.
 * Reconstruction loss measures how much the generated image is similar to the input image
 * KL (Kullback Leibler) divergence measures the error between the distribution we desire & the generated distribution.
@@ -220,7 +220,7 @@ def recon_loss(y_true, y_pred):
  	return K.mean(K.sum(K.binary_crossentropy(y_true, y_pred), axis=-1))
 ```
 
-### Compile the model
+## Compile the model
 * You can check input & output layers of the each model by deleting # in front of __.summary() functions.
 
 
@@ -239,11 +239,6 @@ cvae = Model([input_img, cond_in], output, name='cVAE')
 cvae.compile(optimizer='adam', loss=vae_loss, metrics = [KL_loss, recon_loss])
 #cvae.summary()
 ```
-
-    WARNING:tensorflow:From /usr/local/lib/python3.7/dist-packages/tensorflow_core/python/ops/nn_impl.py:183: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
-    Instructions for updating:
-    Use tf.where in 2.0, which has the same broadcast rule as np.where
-
 
 * You can also see the model architecture shemes with the code below. *(Optional)*
 
@@ -321,9 +316,9 @@ cvae_hist = cvae.fit([X_train, y_train], X_train, batch_size=m, verbose = 1, epo
     60000/60000 [==============================] - 15s 248us/step - loss: 0.2211 - KL_loss: -3.1698e-09 - recon_loss: 0.2211 - val_loss: 0.2196 - val_KL_loss: -1.5410e-08 - val_recon_loss: 0.2196
 
 
-###Results
+## Results
 
-#### Check the latent distribution of encoded data
+### Check the latent distribution of encoded data
 * Below, you can see the distribution of encoded 2-dimensional points on the latent graph.
 * As you can see, different colors show different numbers and they all distributed according to Gaussian distribution.
 
@@ -353,7 +348,7 @@ construct_latent_plot()
 ![png](https://github.com/boranim/cVAE-practice-with-MNIST/blob/main/cVAE_images/4.png)
 
 
-#### Comparing the output with the input data
+### Comparing the output with the input data
 
 *   You can compare the images with the below function
 
@@ -391,7 +386,7 @@ compare_predicts(10)
 ![png](https://github.com/boranim/cVAE-practice-with-MNIST/blob/main/cVAE_images/5.png)
 
 
-#### Construct new images
+### Construct new images
 
 * One of the advantages of conditional VAE is that you can generate the images you want by inputting the condition into the decoder of the model.
 * For the latent coordinates, we can input (0,0) or else we can choose different coordinates since it's effect will be less than the condition (label)information.
