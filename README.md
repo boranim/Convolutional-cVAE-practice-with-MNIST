@@ -1,4 +1,4 @@
-# Key points of contitional cVAE
+# Key points of conditional cVAE
 
 
 *   cVAE means conditional variational Auto encoder
